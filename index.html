@@ -43,6 +43,87 @@
       font-weight: bold;
     }
 
+/* ============================
+   RESPONSIVE DESIGN SETTINGS
+   ============================ */
+
+/* ----- Tablets (768px and up) ----- */
+@media (max-width: 1024px) {
+  nav {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 140px 30px 60px;
+  }
+
+  .hero img {
+    width: 350px;
+    margin-top: 20px;
+  }
+
+  .hero .text {
+    max-width: 100%;
+  }
+}
+
+/* ----- Mobile Phones (600px and below) ----- */
+@media (max-width: 600px) {
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    display: none; /* hide navbar links for now */
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 130px 20px 40px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .hero img {
+    width: 260px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    max-width: 100%;
+  }
+}
+
+/* ----- Extra Small Phones (380px and under) ----- */
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero img {
+    width: 220px;
+  }
+}
+
+    
     /* HERO SECTION */
     .hero {
       display: flex;
@@ -471,6 +552,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
