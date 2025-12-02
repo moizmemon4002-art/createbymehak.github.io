@@ -5,183 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moiz Nadeem - Designer</title>
   <style>
-    body {
-      margin: 0;
-      font-family: solid sans-serif;, sans-serif;
-      background: #ffffff;
-      color: #000;
-    }
-
-    /* NAVBAR */
-    nav {
-      width: 100%;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      background: red;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-
-    nav .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
-
-     /* Hamburger Menu for Mobile/Tablet */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: #000;
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-
-/* ============================
-   RESPONSIVE DESIGN SETTINGS
-   ============================ */
-
-/* ----- Tablets (768px and up) ----- */
-@media (max-width: 1024px) {
-  nav {
-    padding: 15px 30px;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 140px 30px 60px;
-  }
-
-  .hero img {
-    width: 350px;
-    margin-top: 20px;
-  }
-
-  .hero .text {
-    max-width: 100%;
-  }
+   body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Fixed typo */
+  background: #ffffff;
+  color: #000;
+  font-size: 16px; /* Base font size */
+  line-height: 1.6;
 }
 
-/* ----- Mobile Phones (600px and below) ----- */
-@media (max-width: 600px) {
+/* NAVBAR */
+nav {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: red;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
 
-  nav {
-    padding: 15px 20px;
-  }
+nav .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
 
-  nav ul {
-    display: none; /* hide navbar links for now */
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
 
-  .hero {
-    flex-direction: column;
-    padding: 130px 20px 40px;
-    text-align: center;
-  }
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+}
 
-  .hero h1 {
-    font-size: 32px;
-    line-height: 40px;
-  }
+/* Hamburger Menu for Mobile/Tablet */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-  .hero h1 {
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 60px 80px;
+}
+
+.hero .text {
+  max-width: 50%;
+}
+
+.hero h1 {
   font-size: clamp(24px, 3vw, 50px); /* Scalable base size */
   font-weight: 900;
   text-align: center; /* Center on all screens for better mobile fit */
   line-height: 1.2; /* Tighter line height for mobile */
 }
+
+.hero h1 span {
+  color: red;
+}
+
 /* Mobile-specific adjustments */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 20px; /* Smaller font for very small screens */
     line-height: 1.1; /* Even tighter for compact display */
-    /* Optional: Remove line break by using CSS to hide <br> or adjust text */
-    /* If you want single line: add white-space: nowrap; but it may overflow */
   }
 }
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 24px; /* Medium reduction for tablets */
   }
 }
 
-  .hero img {
-    width: 260px;
-  }
-
-  section {
-    padding: 50px 20px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box {
-    max-width: 100%;
-  }
-}
-
-/* ----- Extra Small Phones (380px and under) ----- */
-@media (max-width: 380px) {
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  .hero img {
-    width: 220px;
-  }
-}
-
-    
-    /* HERO SECTION */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 150px 60px 80px;
-    }
-
-    .hero .text {
-      max-width: 50%;
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      font-weight: 900;
-    }
-
-    .hero h1 span {
-      color: red;
-    }
-
-    .hire-btn {
+.hire-btn {
   background: red;
   color: #fff;
   border: none;
@@ -197,53 +114,41 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .hire-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
+.hero img {
+  width: 420px;
+  height: auto;
 }
 
-@media (max-width: 480px) {
-  .hire-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    width: 100%;
-    box-sizing: border-box;
-  }
+/* SECTIONS */
+section {
+  padding: 80px 60px;
 }
 
-    .hero img {
-      width: 420px;
-    }
+h2 {
+  font-size: clamp(20px, 2.5vw, 32px); /* Scalable with min/max */
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 10px;
+}
 
-    /* SECTIONS */
-    section { padding: 80px 60px; }
+p {
+  font-size: clamp(14px, 1.1vw, 18px); /* Scalable with min/max */
+}
 
-    h2 {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+/* Section Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-            /* Section Styling */
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
+section {
+  margin-bottom: 40px;
+}
 
-        section { 
-            margin-bottom: 40px; 
-        }
-
-        h2 { 
-            border-bottom: 2px solid #555; 
-            padding-bottom: 10px; 
-        }
-
-    /* PORTFOLIO GRID */
-    .filter-menu {
+/* PORTFOLIO GRID */
+.filter-menu {
   margin-bottom: 25px;
   display: flex;
   flex-wrap: wrap;
@@ -282,44 +187,45 @@
 .portfolio-grid img:hover {
   transform: scale(1.05);
 }
- 
 
-    /* CONTACT FORM */
-    .contact-box {
-      background: #f2f2f2;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 400px;
-    }
+/* CONTACT FORM */
+.contact-box {
+  background: #f2f2f2;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+}
 
-    .contact-box input, .contact-box textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-    }
+.contact-box input, .contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
 
-    footer {
-      background: red;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 50px;
-    }
+footer {
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  font-size: 14px;
+}
 
-    a { 
-            color: #555; 
-            text-decoration: none; 
-            font-weight: bold;
-        }
-        
-        a:hover { 
-            text-decoration: underline; 
-        }
+a {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 .social-links {
   position: fixed;
   right: 20px;
-  bottom: 90px; /* above WhatsApp button */
+  bottom: 90px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -355,8 +261,7 @@
   gap: 15px;
 }
 
-#whatsappForm input,
-#whatsappForm textarea {
+#whatsappForm input, #whatsappForm textarea {
   width: 100%;
   padding: 12px;
   border-radius: 6px;
@@ -366,7 +271,7 @@
 }
 
 #whatsappForm button {
-  background: red; /* WhatsApp green */
+  background: red;
   color: #fff;
   border: none;
   padding: 12px 25px;
@@ -381,15 +286,13 @@
   transform: scale(1.05);
 }
 
-
-    /* CSS: add to your stylesheet */
 #whatsapp-float {
   position: fixed;
   right: 20px;
   bottom: 20px;
   width: 56px;
   height: 56px;
-  background: #25D366; /* WhatsApp green */
+  background: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -398,8 +301,196 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   z-index: 9999;
 }
-#whatsapp-float:hover { transform: translateY(-3px); }
-#whatsapp-float svg { display:block; }
+
+#whatsapp-float:hover {
+  transform: translateY(-3px);
+}
+
+#whatsapp-float svg {
+  display: block;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* Desktop (>1024px) */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 18px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Tablet/Laptop (768px - 1024px) */
+@media (max-width: 1024px) {
+  nav {
+    padding: 15px 30px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 140px 30px 60px;
+  }
+  .hero .text {
+    max-width: 100%;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero img {
+    width: 350px;
+  }
+  section {
+    padding: 60px 30px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 16px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  .social-links {
+    right: 15px;
+  }
+  #whatsapp-float {
+    right: 15px;
+  }
+}
+
+/* Small Tablet (480px - 768px) */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: red;
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+  }
+  nav ul.show {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hero {
+    padding: 120px 20px 50px;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero img {
+    width: 280px;
+  }
+  section {
+    padding: 50px 20px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .hire-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .contact-box {
+    padding: 20px;
+  }
+  .social-links {
+    right: 10px;
+    bottom: 100px;
+  }
+  #whatsapp-float {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  #whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Mobile (<480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px;
+  }
+  nav ul {
+    width: 150px;
+    padding: 15px;
+  }
+  .hero {
+    padding: 100px 15px 40px;
+  }
+  .hero h1 {
+    font-size: 20px;
+    line-height: 1.1;
+  }
+  .hero img {
+    width: 200px;
+  }
+  section {
+    padding: 40px 15px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .hire-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .contact-box {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .social-links {
+    right: 5px;
+    bottom: 90px;
+  }
+  #whatsapp-float {
+    right: 5px;
+    bottom: 5px;
+    width: 45px;
+    height: 45px;
+  }
+  #whatsapp-float svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 
   </style>
 </head>
@@ -588,6 +679,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
