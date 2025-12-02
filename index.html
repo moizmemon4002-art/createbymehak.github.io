@@ -43,6 +43,21 @@
       font-weight: bold;
     }
 
+     /* Hamburger Menu for Mobile/Tablet */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #000;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
 /* ============================
    RESPONSIVE DESIGN SETTINGS
    ============================ */
@@ -90,6 +105,27 @@
     font-size: 32px;
     line-height: 40px;
   }
+
+  .hero h1 {
+  font-size: clamp(24px, 3vw, 50px); /* Scalable base size */
+  font-weight: 900;
+  text-align: center; /* Center on all screens for better mobile fit */
+  line-height: 1.2; /* Tighter line height for mobile */
+}
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 20px; /* Smaller font for very small screens */
+    line-height: 1.1; /* Even tighter for compact display */
+    /* Optional: Remove line break by using CSS to hide <br> or adjust text */
+    /* If you want single line: add white-space: nowrap; but it may overflow */
+  }
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 24px; /* Medium reduction for tablets */
+  }
+}
 
   .hero img {
     width: 260px;
@@ -552,6 +588,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
