@@ -100,21 +100,54 @@ nav ul li a {
     font-size: 24px; /* Medium reduction for tablets */
   }
 }
+body {
+    background-color: #FAFAFA;
+    color: #333333;
+}
 
+.hero {
+    background-color: #FFF0F3; /* soft pink */
+}
+/* --- Hire Button --- */
 .hire-btn {
-  background: red;
+  background: #ff4d6d;
   color: #fff;
   border: none;
-  padding: 12px 25px;
-  font-size: 18px;
+  padding: clamp(10px, 1.2vw, 16px) clamp(20px, 3vw, 30px);
+  font-size: clamp(14px, 1.5vw, 20px);
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .hire-btn:hover {
-  background: darkred;
+  background: #e03e5b;
   transform: scale(1.05);
+}
+
+/* --- Portfolio Filter Buttons --- */
+.filter-btn {
+  padding: clamp(8px, 1vw, 14px) clamp(15px, 2vw, 25px);
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: #ff4d6d;
+  color: #fff;
+}
+
+/* Responsive flex wrap */
+.filter-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .hero img {
@@ -545,7 +578,7 @@ a:hover {
 </a>
     </div>
       <a>
-   <img src="mehakmoiz.jpeg" alt="My Photo" style="width:250px; height:300px;">
+   <img src="mehakmoiz.jpeg" alt="My Photo" style="width:350px; height:300px;">
   </a>
   </section>
 
@@ -707,6 +740,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
