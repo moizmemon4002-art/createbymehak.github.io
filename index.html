@@ -152,10 +152,11 @@ section {
 
 /* PORTFOLIO GRID */
 .filter-menu {
-  margin-bottom: 25px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: wrap;           /* allows buttons to move to the next line */
+  gap: 10px;                 /* spacing between buttons */
+  justify-content: center;   /* center buttons */
+  margin-bottom: 20px;
 }
 
 .filter-btn {
@@ -172,6 +173,20 @@ section {
   background: red;
   color: #fff;
 }
+      @media (max-width: 480px) {
+  .filter-btn {
+    flex: 1 1 45%;          /* each button ~half width on mobile */
+    font-size: 14px;        /* smaller text fits better */
+    padding: 8px 10px;
+    box-sizing: border-box; /* ensures proper width */
+  }
+}
+@media (max-width: 350px) {
+  .filter-btn {
+    flex: 1 1 100%;         /* full width on very small screens */
+  }
+}
+
 
 .portfolio-grid {
   display: grid;
@@ -530,7 +545,7 @@ a:hover {
 </a>
 
     </div>
-   <img src="moiz.jpg" alt="My Photo" style="width:250px; height:300px;" "border-radius:50%; object-fit:cover; margin-top:20px;">
+   <img src="mehakmoiz.jpeg" alt="My Photo" style="width:250px; height:300px;" "border-radius:50%; object-fit:cover; margin-top:20px;">
   </section>
 
   <!-- ABOUT -->
@@ -691,6 +706,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
