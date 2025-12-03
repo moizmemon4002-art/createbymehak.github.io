@@ -777,24 +777,21 @@ function filterImages(category) {
 
   </section>
 
-  <script>
+ <script>
 document.getElementById('whatsappForm').addEventListener('submit', function(e){
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     var name = document.getElementById('name').value;
     var subject = document.getElementById('subject').value;
     var message = document.getElementById('message').value;
 
-    // WhatsApp number (replace with your number in international format)
     var whatsappNumber = "923188005106";
 
-    // Create the WhatsApp message text
-    var text = "Hello, I have a query.\n\nName: " + name + "\nSubject: " + subject + "\nMessage: " + message;
+    var url = "https://wa.me/" + whatsappNumber + "?text="
+              + "Name: " + name + "%0a"
+              + "Subject: " + subject + "%0a"
+              + "Message: " + message;
 
-    // Encode text for URL
-    var url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
-
-    // Open WhatsApp
     window.open(url, "_blank");
 });
 </script>
@@ -816,6 +813,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
