@@ -103,8 +103,8 @@ p {
   .hero .text h1 span {
     color: #de0d14; /* optional accent */
   }
+} /* <-- fixed: close the @media block here */
 
-  
 /* ========== NAVBAR ========== */
 nav {
   width: 100%;
@@ -378,19 +378,19 @@ ul.skills {
       <button class="hire-btn">Hire Me</button>
     </a>
   </div>
-  <img src="mehakmoiz.jpeg" alt="Moiz Nadeem">
+  <img src="mehakmoiz.jpeg" alt="Portrait of Moiz Nadeem">
 </section>
 
 <!-- ========== ABOUT ========== -->
 <section id="about">
   <h2>About Me</h2>
-  <p>I am Moiz Nadeem, a dedicated and creative Graphic Designer with over three years of professional experience in delivering high-quality visual solutions. My journey in design has allowed me to work in diverse environments, including Creative Solutions & Co., Artplus Printing & Press, and Grands Digital, where I strengthened my skills in branding, social media content, marketing designs, and print media.
+  <p>I am Moiz Nadeem, a dedicated and creative Graphic Designer with over three years of professional experience in delivering high-quality visual solutions. My journey in design has allowed me to work on a variety of projects and refine my skills.</p>
 
-Over the years, I have developed a strong command of industry-standard design tools and a deep understanding of layout, color psychology, typography, and modern design trends. My work focuses on creating clean, impactful, and purpose-driven visuals that help brands communicate clearly and professionally. I have experience in designing logos, posters, banners, packaging, business stationery, product ads, and complete social media branding sets.
+  <p>Over the years, I have developed a strong command of industry-standard design tools and a deep understanding of layout, color psychology, typography, and modern design trends. My work focuses on creative, user-centered design that communicates clearly.</p>
 
-I have also worked remotely, which has improved my ability to manage deadlines, communicate effectively, and deliver consistent quality while handling multiple projects. My approach to design combines creativity with strategy, ensuring that every piece of work supports the client’s goals and enhances their brand identity.
+  <p>I have also worked remotely, which has improved my ability to manage deadlines, communicate effectively, and deliver consistent quality while handling multiple projects. My approach to design combines strategic thinking with a refined aesthetic.</p>
 
-Currently pursuing my B.COM, I continue to grow as a designer by learning new techniques and exploring creative ideas. Designing is not just my profession—it is my passion and the work I enjoy the most.</p>
+  <p>Currently pursuing my B.COM, I continue to grow as a designer by learning new techniques and exploring creative ideas. Designing is not just my profession—it is my passion and the work I enjoy the most.</p>
   <h2>Apps</h2>
   <p>Adobe Creative Suite (Photoshop, Illustrator, InDesign), Figma, Branding, Illustration, Web Design.</p>
   <h2>Skills</h2>
@@ -420,14 +420,14 @@ Currently pursuing my B.COM, I continue to grow as a designer by learning new te
     <button class="filter-btn" onclick="filterImages(event,'festival')">Festival</button>
   </div>
   <div class="portfolio-grid">
-    <img class="item branding" src="design2.jpeg" />
-    <img class="item branding" src="design4.jpeg" />
-    <img class="item creative" src="design92.jpeg" />
-    <img class="item social" src="design11.jpeg" />
-    <img class="item social" src="design12.jpeg" />
-    <img class="item print" src="design90.jpeg" />
-    <img class="item print" src="design91.jpeg" />
-    <img class="item festival" src="design93.jpeg" />
+    <img class="item branding" src="design2.jpeg" alt="Branding project 1" />
+    <img class="item branding" src="design4.jpeg" alt="Branding project 2" />
+    <img class="item creative" src="design92.jpeg" alt="Creative artwork" />
+    <img class="item social" src="design11.jpeg" alt="Social media design 1" />
+    <img class="item social" src="design12.jpeg" alt="Social media design 2" />
+    <img class="item print" src="design90.jpeg" alt="Print design 1" />
+    <img class="item print" src="design91.jpeg" alt="Print design 2" />
+    <img class="item festival" src="design93.jpeg" alt="Festival design" />
   </div>
 </section>
 
@@ -496,7 +496,9 @@ function filterImages(event, category) {
     else img.style.display = img.classList.contains(category) ? "block" : "none";
   });
   document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+  // robustly find the button clicked (handles clicks on inner elements)
+  const btn = event.target.closest('.filter-btn') || event.currentTarget || event.target;
+  if (btn && btn.classList) btn.classList.add("active");
 }
 
 // WhatsApp form
@@ -506,15 +508,11 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
   var subject = document.getElementById('subject').value;
   var message = document.getElementById('message').value;
   var whatsappNumber = "923188005106";
-  var url = "https://wa.me/" + whatsappNumber + "?text="
-            + "Name: " + name + "%0a"
-            + "Subject: " + subject + "%0a"
-            + "Message: " + message;
+  var text = "Name: " + name + "\nSubject: " + subject + "\nMessage: " + message;
+  var url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
   window.open(url, "_blank");
 });
 </script>
 
 </body>
 </html>
-
-
