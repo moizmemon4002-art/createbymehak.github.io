@@ -43,7 +43,68 @@ h2 {
 p {
   font-size: clamp(14px, 1.1vw, 18px);
 }
+/* Desktop / Laptop (default) */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 60px 80px;
+}
 
+/* Hero image styling */
+.hero img {
+  width: 420px;
+  height: auto;
+  border-radius: 10px; /* optional */
+}
+
+/* Hero button default */
+.hire-btn {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hire-btn:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .hero {
+    display: block; /* stack content vertically */
+    text-align: center;
+    padding: 20px; /* Adds 20px of space inside the element on all sides */
+    margin: 15px 0; /* Adds 15px of space above and below, 0 on left/right */
+
+    /* Mobile background */
+    background-image: url('mehakmoiz.jpeg');
+    background-size: cover; /* cover whole section but make some space to navber */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* make text visible */
+  }
+
+  .hero img {
+    display: none; /* hide the separate image */
+  }
+
+  .hero .text h1 {
+    font-size: 20px; /* adjust text size */
+    line-height: 1.2;
+  }
+
+  .hero .text h1 span {
+    color: #de0d14; /* optional accent */
+  }
+
+  
 /* ========== NAVBAR ========== */
 nav {
   width: 100%;
@@ -455,3 +516,4 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 
 </body>
 </html>
+
