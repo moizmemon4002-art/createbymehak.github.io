@@ -86,7 +86,6 @@
     margin-top: 20px;     /* spacing below text */
   }
 }
-/* NAVBAR */
 nav {
   width: 100%;
   padding: 15px 60px;
@@ -97,15 +96,14 @@ nav {
   top: 0;
   left: 0;
   background: red;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-nav .logo {
+nav .logo a {
+  color: #fff;
   font-size: 24px;
   font-weight: 700;
-  color: #fff;
   text-decoration: none;
 }
 
@@ -118,51 +116,47 @@ nav ul {
 }
 
 nav ul li a {
-  text-decoration: none;
   color: #fff;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
   transition: color 0.3s;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #000; /* Highlight color for hover/active */
+  color: black;
 }
 
-/* Hamburger Menu for Mobile/Tablet */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
   cursor: pointer;
+  gap: 4px;
 }
 
 .hamburger div {
-  width: 100%;
+  width: 25px;
   height: 3px;
   background: #fff;
   border-radius: 2px;
-  transition: 0.3s;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* Mobile */
 @media (max-width: 768px) {
-  nav {
-    padding: 15px 20px;
+  .hamburger {
+    display: flex;
   }
 
   nav ul {
     position: absolute;
     top: 60px;
     right: 0;
-    width: 200px;
     background: red;
+    width: 200px;
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    padding: 15px;
     display: none;
     border-radius: 0 0 8px 8px;
   }
@@ -170,11 +164,35 @@ nav ul li a.active {
   nav ul.show {
     display: flex;
   }
-
-  .hamburger {
-    display: flex;
-  }
 }
+</style>
+
+<!-- JS for Hamburger & Active Links -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const links = document.querySelectorAll('.nav-link');
+
+// Toggle mobile menu
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+// Smooth scroll & active link highlight
+links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+
+    // Highlight active
+    links.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    // Close mobile menu
+    navLinks.classList.remove('show');
+  });
+});
 
 
 /* HERO SECTION */
@@ -665,24 +683,24 @@ a:hover {
 </head>
 <body>
 
- <!-- Shared Navigation (copy from previous) -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Moiz Nadeem</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contacts">Get in touch</a></li>
-                    <li class="nav-item"><a class="nav-link" href="queries">Queries</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- NAVBAR -->
+<nav>
+  <div class="logo"><a href="#home">Moiz Nadeem</a></div>
+  
+  <div class="hamburger" id="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <ul id="nav-links">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+    <li><a href="#contact" class="nav-link">Get in Touch</a></li>
+    <li><a href="#queries" class="nav-link">Queries</a></li>
+  </ul>
+</nav> 
 
 
   <!-- HERO -->
@@ -856,6 +874,7 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
 </a>
 </body>
 </html>
+
 
 
 
